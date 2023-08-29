@@ -1,0 +1,215 @@
+/* comentário CSS: reset # de todos elementos: margens e preenchimento */
+
+/* o link veio Fonts Google -> View Familie */
+/* importando uma font que não existe em nosso computador*/
+/* @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat&display=swap');
+
+:root{
+    --cor-primaria: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-terciaria: #22d4fd;
+    --cor-houer: #426168;
+
+    --fonte-primaria: 'Montserrat', sans-serif;
+    --fonte-secundaria: 'Krona One', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* height: 100vh; Utilizar 100% da área da página */
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+h1 {
+    color: var(--cor-secundaria);
+    font-weight: 600;
+
+}
+
+p {
+    color: var(--cor-secundaria);
+}
+
+.paragrafo-destaque{
+    color: var(--cor-terciaria);
+}
+
+span{
+    /* color: rgb(88, 15, 15); */
+    /* border: 1px solid #500d04; */
+    padding: 1px;
+}
+
+.appsec {
+    /* border: 2px, solid #000000; */
+    /* background-color: #c4c5c5; */
+    /* box-shadow: 0px, 4px, 10px, rgb(0, 0, 0, 0.25); */
+    width: 50;
+    /* margin: 2%;  */
+    border-radius: 4%;
+}
+
+.cabecalho{
+    padding: 1% 0% 1% 110px;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--cor-terciaria);
+    text-decoration: none; /* Impede que apareca o sublinhado do ink */
+}
+
+.cabecalho__menu__link:hover {
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--cor-terciaria);
+    /* border-bottom: 4PX solid var(--cor-terciaria); */
+    transition: 0s; /* determina o tempo de transição para volta do estado normal font-size: 40px; */
+}
+
+.apresentacao{
+    /* margin: 2% 2%; */
+    padding: 5% 5%;
+    display: flex; /* or inline-flex */
+    align-items: center;
+    justify-content: space-between; /* espaços entre os itens horizontalmente */
+    gap: 40px;
+}
+
+.apresentacao__conteudo {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 40px; /* espaços entre os itens QUANDO FLEX ESTÁ EM COLUNAS */
+}
+
+.apresentacao__conteudo__titulo {
+    /* margin: 2%; */
+    font-family: var(--fonte-secundaria);
+    font-size: 1.75rem;
+    text-align: justify;
+}
+
+.apresentacao__imagem {
+    border-radius: 4%;
+    width: 50%;
+}
+
+
+.titulo-destaque{
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__paragrafo {
+    font-family: var(--fonte-primaria);
+    /* margin: 2%; */
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.apresentacao__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    /* margin: 5%; */
+    gap: 22px;
+}
+
+.apresentacao__links__subtitulo{
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__navegacao {
+    /* background-color: #22D4FD; */
+    display: flex;
+    justify-content: center; /* Centraliza os elementos Flex horizontal - space-around - space-evenly */
+    gap: 10%; /* Espaçamento entre os itens do Flex horizontal */
+    font-size: 1.5rem;
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    border: 2PX solid var(--cor-terciaria);
+    border-radius: 8px;
+    transition: 1s; /* determina o tempo de transição para volta do estado normal font-size: 40px; */
+    cursor: pointer;
+}
+
+.apresentacao__links__navegacao:hover {
+    display: flex;
+    justify-content: center; /* Centraliza os elementos Flex horizontal */
+    gap: 5%; /* Espaçamento entre os itens do Flex horizontal */
+    background-color: var(--cor-houer);
+    color: var(--cor-secundaria);
+    width: 40%;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 21.5px 0;
+    font-family: var(--fonte-primaria);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 1s; /* determina o tempo de transição para volta do estado normal font-size: 40px; */
+}
+
+.rodape{
+    font-size: 1.75rem;
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    font-style: normal;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    padding: 24px;
+    text-align: center; 
+}
+
+/* 
+Caso o dispositivo tenha tela menor que 1200px os estilos acima não serão +
+utilizados e sim os estilos do media serão utilizados
+*/
+@media (max-width: 1200px) {
+    .cabecalho{
+        padding: 6%;
+    }
+
+    .cabecalho__menu{
+        justify-content: center;
+    }
+
+    .apresentacao{
+        flex-direction: column-reverse;
+    }
+
+    .apresentacao__conteudo{
+        width: auto;
+    }
+}
+
+/* padding: 25px; 25 para todos acima direita abaixo esquerda*/
+/* padding: 25px 50px 75px 100px; acima direita abaixo esquerda */
+/* padding-top */
+/* padding-right */
+/* padding-bottom */
+/* padding-left */
